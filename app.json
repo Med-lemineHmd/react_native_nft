@@ -2,6 +2,7 @@
   "expo": {
     "name": "react_native_nft",
     "slug": "react_native_nft",
+    "description": "NFT Marketplace",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/splash.png",
