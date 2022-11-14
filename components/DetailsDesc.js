@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { View, Text } from "react-native";
 
 import { EthPrice, NFTTitle } from "./SubInfo";
@@ -21,9 +21,10 @@ const DetailsDesc = ({ data }) => {
         <NFTTitle
           title={data.name}
           subTitle={data.creator}
-          titlSize={SIZES.extraLarge}
-          subTitlesize={SIZES.font}
+          titleSize={SIZES.extraLarge}
+          subTitleSize={SIZES.font}
         />
+
         <EthPrice price={data.price} />
       </View>
 
@@ -44,9 +45,9 @@ const DetailsDesc = ({ data }) => {
         >
           <Text
             style={{
+              color: COLORS.secondary,
               fontSize: SIZES.small,
               fontFamily: FONTS.regular,
-              color: COLORS.secondary,
               lineHeight: SIZES.large,
             }}
           >
@@ -54,9 +55,9 @@ const DetailsDesc = ({ data }) => {
             {!readMore && "..."}
             <Text
               style={{
+                color: COLORS.primary,
                 fontSize: SIZES.small,
                 fontFamily: FONTS.semiBold,
-                color: COLORS.primary,
               }}
               onPress={() => {
                 if (!readMore) {
@@ -68,7 +69,7 @@ const DetailsDesc = ({ data }) => {
                 }
               }}
             >
-              {readMore ? " Show Less" : "Read More"}
+              {readMore ? " Show Less" : " Read More"}
             </Text>
           </Text>
         </View>

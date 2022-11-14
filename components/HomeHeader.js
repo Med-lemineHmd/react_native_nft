@@ -1,10 +1,16 @@
+import React from "react";
 import { View, Text, Image, TextInput } from "react-native";
 
 import { COLORS, FONTS, SIZES, assets } from "../constants";
 
 const HomeHeader = ({ onSearch }) => {
   return (
-    <View style={{ backgroundColor: COLORS.primary, padding: SIZES.font }}>
+    <View
+      style={{
+        backgroundColor: COLORS.primary,
+        padding: SIZES.font,
+      }}
+    >
       <View
         style={{
           flexDirection: "row",
@@ -46,8 +52,9 @@ const HomeHeader = ({ onSearch }) => {
             color: COLORS.white,
           }}
         >
-          Hello, Victoria 👋
+          Hello Victoria 👋
         </Text>
+
         <Text
           style={{
             fontFamily: FONTS.bold,
@@ -56,7 +63,7 @@ const HomeHeader = ({ onSearch }) => {
             marginTop: SIZES.base / 2,
           }}
         >
-          Let's find a masterpiece
+          Let’s find masterpiece Art
         </Text>
       </View>
 

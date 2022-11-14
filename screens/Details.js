@@ -1,21 +1,21 @@
+import React from "react";
 import {
-  Text,
   View,
+  Text,
   SafeAreaView,
   Image,
   StatusBar,
   FlatList,
 } from "react-native";
-import React from "react";
 
-import { COLORS, FONTS, SIZES, SHADOWS, assets } from "../constants";
+import { COLORS, SIZES, assets, SHADOWS, FONTS } from "../constants";
 import {
   CircleButton,
   RectButton,
   SubInfo,
-  FocusedStatusBar,
   DetailsDesc,
   DetailsBid,
+  FocusedStatusBar,
 } from "../components";
 
 const DetailsHeader = ({ data, navigation }) => (
@@ -25,12 +25,14 @@ const DetailsHeader = ({ data, navigation }) => (
       resizeMode="cover"
       style={{ width: "100%", height: "100%" }}
     />
+
     <CircleButton
       imgUrl={assets.left}
       handlePress={() => navigation.goBack()}
       left={15}
       top={StatusBar.currentHeight + 10}
     />
+
     <CircleButton
       imgUrl={assets.heart}
       right={15}
@@ -43,11 +45,11 @@ const Details = ({ route, navigation }) => {
   const { data } = route.params;
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <FocusedStatusBar
         barStyle="dark-content"
         backgroundColor="transparent"
-        transLucent={true}
+        translucent={true}
       />
 
       <View
@@ -58,7 +60,7 @@ const Details = ({ route, navigation }) => {
           paddingVertical: SIZES.font,
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "rgba(255, 255, 255, 0.5)",
+          backgroundColor: "rgba(255,255,255,0.5)",
           zIndex: 1,
         }}
       >
@@ -70,13 +72,16 @@ const Details = ({ route, navigation }) => {
         renderItem={({ item }) => <DetailsBid bid={item} />}
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom: SIZES.extraLarge * 3 }}
+        contentContainerStyle={{
+          paddingBottom: SIZES.extraLarge * 3,
+        }}
         ListHeaderComponent={() => (
           <React.Fragment>
             <DetailsHeader data={data} navigation={navigation} />
             <SubInfo />
             <View style={{ padding: SIZES.font }}>
               <DetailsDesc data={data} />
+
               {data.bids.length > 0 && (
                 <Text
                   style={{
@@ -85,7 +90,7 @@ const Details = ({ route, navigation }) => {
                     color: COLORS.primary,
                   }}
                 >
-                  Current bids
+                  Current Bid
                 </Text>
               )}
             </View>
